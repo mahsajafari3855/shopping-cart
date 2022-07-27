@@ -21,7 +21,7 @@ function ProductDetails({ id }) {
         <p>{discription}</p>
         <p> {category}</p>
       </div>
-    </div>
+    </div> 
   );
 }
 
