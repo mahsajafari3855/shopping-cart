@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 // Functions
-import { shorten, isInCart } from "../helper/functions";
+import { shorten, isInCart, quantityCount } from "../helper/functions";
 
 //context
 import { CartCaontext } from "../../context/CartContextProvider";
@@ -35,6 +35,25 @@ const Product = ({ productData }) => {
               Add to cart
             </button>
           )}
+          {quantityCount(state, productData.id) >1 && (
+            <button
+              onClick={() =>
+                dispatch({ type: "DECREASE", payload: productData })
+              }
+            >
+              -
+            </button>
+          )}
+          {quantityCount(state,productData.id)=== 1 && (
+              <button
+                onClick={() =>
+                  dispatch({ type: "REMOVE_ITEM", payload: productData })
+                }
+              >
+                Remove
+              </button>
+            )}
+          
         </div>
       </div>
     </div>
