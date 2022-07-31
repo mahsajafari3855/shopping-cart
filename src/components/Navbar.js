@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import React, { useContext } from "react";
 
 //context
-import { CartCaontext } from "../context/CartContextProvider";
+import { CartContext } from "../context/CartContextProvider";
 
 function Navbar(props) {
-  const { state } = useContext(CartCaontext);
+  const { state } = useContext(CartContext);
   return (
     <div>
       <div>

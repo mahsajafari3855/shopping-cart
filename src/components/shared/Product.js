@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import { shorten, isInCart, quantityCount } from "../helper/functions";
 
 //context
-import { CartCaontext } from "../../context/CartContextProvider";
+import { CartContext } from "../../context/CartContextProvider";
 
 const Product = ({ productData }) => {
-  const { state, dispatch } = useContext(CartCaontext);
+  const { state, dispatch } = useContext(CartContext);
 
   return (
     <div>
