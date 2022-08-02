@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import Cart from "./shared/Cart";
 //context
 import { CartContext } from "../context/CartContextProvider";
+import { Link } from "react-router-dom";
 
 function ShopCart(props) {
   const { state, dispatch } = useContext(CartContext);
@@ -13,6 +14,44 @@ function ShopCart(props) {
           <Cart key={item.id} data={item} />
         ))}
       </div>
+      {state.itemsCounter > 0 && (
+        <div>
+          <div>
+            <p>
+              <span>Total Items:{state.itemsCounter}</span>
+            </p>
+            <p>
+              <span>Total Peyment:{state.total}</span>
+            </p>
+          </div>
+          <div>
+            <button onClick={() => dispatch({ type: "CHECKOUT" })}>
+              Checkout
+            </button>
+            <button
+              onClick={() =>
+                dispatch({
+                  type: "CLEAR",
+                })
+              }
+            >
+              CLEAR
+            </button>
+          </div>
+        </div>
+      )}
+      {state.checkout && (
+        <div>
+          <p>Check out Successfuly</p>
+          <Link to="/products"> By More</Link>
+        </div>
+      )}
+      {state.checkout && (
+        <div>
+          <p>Check out Successfuly</p>
+          <Link to="/products"> By More</Link>
+        </div>
+      )}
     </div>
   );
 }

@@ -18,10 +18,10 @@ function App(props) {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            {/* <Route index element={<Store />} /> */}
+            <Route index element={<Store />} />
             <Route
               path="/products/:id"
-              element={<ProductDetails {...props} />}
+              element={<ProductDetails />}
             />
 
             <Route path="/products" element={<Store />} />

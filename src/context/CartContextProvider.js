@@ -12,10 +12,10 @@ const sumItems = (items) => {
     0
   );
   const total = items
-    .reduce((total, product) => total + product.price * product.quantity,0)
+    .reduce((total, product) => total + product.price * product.quantity, 0)
     .toFixed(2);
   return { total, itemsCounter };
-}; 
+};
 
 const cartReducer = (state, action) => {
   console.log(state);
@@ -25,6 +25,7 @@ const cartReducer = (state, action) => {
         state.selectedItems.push({
           ...action.payload,
           quantity: 1,
+          checkout: false,
         });
       }
       return {
