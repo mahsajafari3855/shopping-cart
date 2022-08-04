@@ -46,10 +46,10 @@ function ShopCart(props) {
           <Link to="/products"> By More</Link>
         </div>
       )}
-      {state.checkout && (
+      {!state.checkout && state.itemsCounter === 0 && (
         <div>
-          <p>Check out Successfuly</p>
-          <Link to="/products"> By More</Link>
+          <h3>Want to Bye?</h3>
+          <Link to="/products"> Go to Shop</Link>
         </div>
       )}
     </div>
