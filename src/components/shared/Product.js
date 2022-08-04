@@ -18,6 +18,12 @@ const Product = ({ productData }) => {
       <div>
         <Link to={`/products/${productData.id}`}>Details</Link>
         <div>
+
+
+{quantityCount(state,productData.id)>0 &&  <span style={{color:"red"}}> {quantityCount(state,productData.id)}</span>}
+
+
+          
           {isInCart(state, productData.id) ? (
             <button
               onClick={() =>
